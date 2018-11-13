@@ -11,4 +11,6 @@ Navigate to project root with *docker-compose.yml* file
 
 Start spring-boot application and play around.
 
-Swagger is available on: `localhost:8080`
+Swagger: `localhost:8080`
+Elasticsearch: `localhost:9200`
+Kibana: `localhost:5601`
