@@ -1,0 +1,6 @@
+rootProject.name = 'jek'
+include 'java-rest-client'
+include 'java-transport-client'
+include 'model'
+include 'server'
+

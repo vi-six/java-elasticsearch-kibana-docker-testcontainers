@@ -1,0 +1,12 @@
+dependencies {
+    compile project(':java-rest-client')
+    compile project(':java-transport-client')
+    
+    compile libs.javaxAnnotation
+    compile libs.logback
+    compile libs.jaxbApi
+
+    compile "io.springfox:springfox-swagger-ui:${swaggerVersion}"
+    compile "io.springfox:springfox-swagger2:${swaggerVersion}"
+    compile ("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+}

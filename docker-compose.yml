@@ -1,0 +1,32 @@
+version: '2'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.3
+    container_name: jek-elasticsearch
+    ports:
+    - 9200:9200
+    - 9300:9300
+    networks:
+    - esnet
+    environment:
+      discovery.type: single-node
+      cluster.name: elasticsearch
+    volumes:
+    - esdata1:/usr/share/elasticsearch/data
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.4.3
+    container_name: jek-kibana
+    environment:
+      SERVER_NAME: localhost
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+    ports:
+    - 5601:5601
+    networks:
+    - esnet
+
+volumes:
+  esdata1:
+    driver: local
+
+networks:
+  esnet:
