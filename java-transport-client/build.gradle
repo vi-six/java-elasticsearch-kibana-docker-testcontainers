@@ -10,4 +10,6 @@ dependencies {
 
     compile "io.swagger:swagger-annotations:${swaggerAnnotationsVersion}"
     compile "org.elasticsearch.client:transport:${elasticsearchVersion}"
+
+    compile "org.testcontainers:elasticsearch:${testcontainersVersion}"
 }

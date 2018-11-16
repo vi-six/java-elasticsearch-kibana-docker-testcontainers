@@ -25,10 +25,20 @@ allprojects { project ->
         maven { url "https://plugins.gradle.org/m2/" }
     }
 
+    dependencies {
+        testCompile('org.junit.jupiter:junit-jupiter-api:5.3.1')
+        testCompile('org.junit.jupiter:junit-jupiter-params:5.3.1')
+        testRuntime('org.junit.jupiter:junit-jupiter-engine:5.3.1')
+    }
+
     test {
-        useTestNG {}
+        useJUnitPlatform()
+        testLogging {
+            events "passed", "skipped", "failed"
+        }
     }
 }
+
 
 subprojects {
     ext {
@@ -51,7 +61,10 @@ subprojects {
 
         mockitoCoreVersion = '2.23.0'
         testngVersion = '6.14.3'
-
+        
+        jupiterVersion = '5.3.1'
+        testcontainersVersion = '1.10.1'
+        
         libs = [
                 gson           : "com.google.code.gson:gson:${gsonVersion}",
                 lombok         : "org.projectlombok:lombok:${lombokVersion}",
