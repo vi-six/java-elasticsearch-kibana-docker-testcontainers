@@ -1,4 +1,4 @@
-# java-elasticsearch-kibana
+# java-elasticsearch-kibana-docker-testcontainers
 
 Demo java application that works with Elasticsearch through two different types of Clients. 
 RestHighLevelClient and TransportClient are shown here.
